@@ -1,16 +1,19 @@
 package com.example.myapplication;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DAOPlaneta {
 
     ArrayList <Planeta> planetas;
 
     public DAOPlaneta() {
-        planetas = new ArrayList();
-        planetas.add(new Planeta("Mercúrio", 1));
-        planetas.add(new Planeta("Vênus", 2));
-        planetas.add(new Planeta("Terra", 3));
-        planetas.add(new Planeta("Marte", 4));
+        planetas = new ArrayList<>();
+        planetas.add(new Planeta("Mercurio",R.drawable.mercury));
+        planetas.add(new Planeta("Venus",R.drawable.venus));
+        planetas.add(new Planeta("Terra",R.drawable.earth));
+
     }
+
+    public List<Planeta> getPlanetas() {return planetas;}
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,7 @@ public class PlanetaAdapter extends ArrayAdapter<Planeta> {
 
     Context mContext;
     Integer mResource;
-    List mListaPlaneta;
+    List<Planeta> mListaPlaneta;
 
     public PlanetaAdapter(@NonNull Context context, int resource, @NonNull List<Planeta> objects) {
         super(context, resource, objects);
@@ -32,9 +33,12 @@ public class PlanetaAdapter extends ArrayAdapter<Planeta> {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View v = layoutInflater.inflate(mResource, parent, false);
         TextView tv = v.findViewById(R.id.textNome);
-        
-        tv.setText("PlanetaQualquer");
+        ImageView imageView = v.findViewById(R.id.imageView);
 
+        Planeta p = mListaPlaneta.get(position);
+
+        tv.setText(p.nome);
+        imageView.setImageResource(p.foto);
         return v;
     }
 }
